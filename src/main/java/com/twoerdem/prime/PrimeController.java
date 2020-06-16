@@ -10,7 +10,7 @@ public class PrimeController {
 
 	@RequestMapping(value="/prime/{myInt}", method = RequestMethod.GET)
 	public Boolean isPrime(@PathVariable("myInt") Integer myInt) { //This function checks if myInt is a prime number
-        if (myInt <= 1 || myInt >= 97) //The interger may not be bigger or equal to 97
+        if (myInt <= 1 || myInt > 97) //The interger may not be bigger than 97
             return false;
         for (Integer i = 2; i < myInt; i++) { //If the integer is divisible by any number but 1 or itself it is not considered a prime number
             if (myInt % i == 0) {
